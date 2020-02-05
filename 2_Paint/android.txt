@@ -1,0 +1,3 @@
+title=Paint app
+author=plaunezkiy
+orientation=landscape

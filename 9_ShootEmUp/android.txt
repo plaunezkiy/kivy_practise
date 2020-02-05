@@ -1,0 +1,3 @@
+title=ShootEmUp
+author=plaunezkiy
+orientation=landscape

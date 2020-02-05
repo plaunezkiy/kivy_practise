@@ -1,0 +1,3 @@
+title=HelloApp
+author=plaunezkiy
+orientation=landscape

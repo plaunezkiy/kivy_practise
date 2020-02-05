@@ -1,0 +1,3 @@
+title=Stars
+author=plaunezkiy
+orientation=landscape

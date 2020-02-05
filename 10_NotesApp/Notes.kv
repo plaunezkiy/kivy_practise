@@ -1,0 +1,49 @@
+#: import C kivy.utils.get_color_from_hex
+
+<Note@Button>:
+    on_release: app.screen_manager.current = 'Editor'
+    on_release: app.screen_manager.transition.direction = 'left'
+    on_release: app.edit_a_note(self.text)
+    color: C('#000000')
+    background_normal: 'note_normal.png'
+    background_down: 'note_down.png'
+    border: (2, 2, 2, 2)
+    # size_hint: 1, None
+    # text_size: self.width, None
+    # height: self.texture
+
+<Back@Button>:
+    on_release: app.screen_manager.current = 'List'
+    on_release: app.screen_manager.transition.direction = 'right'
+    text: 'Save and return'
+
+<List>:
+    name: 'List'
+    id: List
+    ScrollView:
+        GridLayout:
+            id: notes
+            size_hint_y: None
+            cols: 1
+            row_default_height: 40
+            height: self.minimum_height
+            Note:
+                text: 'Empty note'
+
+<Editor>:
+    name: 'Editor'
+    id: Editor
+    Widget:
+        TextInput:
+            font_size: 40
+            top: root.top
+            width: root.width
+            height: 250
+            id: text_input
+
+        Back:
+            x: 0
+            y: 0
+            width: 150
+            height: 40
+            on_release: app.save_a_note(text_input.text)
